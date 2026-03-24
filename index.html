@@ -230,6 +230,17 @@
                     </a>
                   </span>
                 </div>
+
+                <figure class="image teaser-image-wrapper publication-teaser">
+                  <img
+                    src="static/images/teaser.png"
+                    alt="Overview of Diffusion Stabilizer Policy showing perturbed demonstrations during training and stable trajectories during inference"
+                    class="teaser-image"
+                    loading="eager">
+                </figure>
+                <p class="subtitle has-text-centered video-caption">
+                  Diffusion Stabilizer Policy first learns on clean demonstrations, then filters mixed clean and perturbed data with action prediction error so the final policy produces more stable surgical manipulation trajectories.
+                </p>
               </div>
             </div>
           </div>
@@ -237,15 +248,17 @@
       </div>
     </section>
 
-    <section class="hero teaser">
+    <section class="section video-showcase">
       <div class="container is-max-desktop">
-        <div class="hero-body">
-          <video poster="static/images/teaser.png" id="tree" autoplay controls muted loop height="100%" preload="metadata">
-            <source src="static/videos/ICRA video camera ready.mp4" type="video/mp4">
-          </video>
-          <h2 class="subtitle has-text-centered">
-            Diffusion Stabilizer Policy first learns on clean demonstrations, then filters mixed clean and perturbed data with action prediction error so the final policy produces more stable surgical manipulation trajectories.
-          </h2>
+        <div class="columns is-centered has-text-centered">
+          <div class="column is-four-fifths">
+            <h2 class="title is-3">Introduction Video</h2>
+            <div class="content">
+              <video poster="static/images/teaser.png" id="tree" autoplay controls muted loop preload="metadata" class="intro-video-player">
+                <source src="static/videos/ICRA video camera ready.mp4" type="video/mp4">
+              </video>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -265,50 +278,28 @@
       </div>
     </section>
 
-    <section class="section">
-      <div class="container is-max-desktop">
-        <div class="columns is-centered">
-          <div class="column is-four-fifths">
-            <h2 class="title is-3 has-text-centered">Overview</h2>
-            <div class="content has-text-justified">
-              <p>
-                DSP addresses a practical challenge in surgical robotics: demonstrations collected from simulation or real systems can contain accidental perturbations, retries, and non-optimal segments. Instead of discarding all imperfect demonstrations, DSP learns a diffusion policy on clean data first and then uses the learned policy itself as a stabilizer to decide which mixed samples should remain during later training.
-              </p>
-              <p>
-                The paper studies both action-level perturbations and trajectory-level perturbations in SurRoL surgical tasks, and also validates sim-to-real transfer with real robotic executions. The figures below summarize the method overview, the two-stage training framework, qualitative real-world results, and the quantitative comparisons reported in the paper.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+
 
     <section class="hero is-small">
       <div class="hero-body">
         <div class="container">
           <div id="results-carousel" class="carousel results-carousel">
             <div class="item">
-              <img src="static/images/teaser.png" alt="Overview of Diffusion Stabilizer Policy showing perturbed demonstrations during training and stable trajectories during inference" loading="lazy">
-              <h2 class="subtitle has-text-centered">
-                Figure 1 from the paper. DSP learns a diffusion stabilizer from imperfect demonstrations with perturbations and uses it to produce stable trajectories at inference time.
-              </h2>
-            </div>
-            <div class="item">
               <img src="static/images/dsp_overview.png" alt="Two-stage training framework of Diffusion Stabilizer Policy with clean demonstrations, perturbed demonstrations, filtering, and policy updates" loading="lazy">
               <h2 class="subtitle has-text-centered">
-                Figure 2 from the paper. The training framework first learns on clean demonstrations, then filters a mixed batch of clean and perturbed samples according to the error between predicted and recorded actions before continuing policy updates.
+                <b>An overview of the framework</b> The training framework first learns on clean demonstrations, then filters a mixed batch of clean and perturbed samples according to the error between predicted and recorded actions before continuing policy updates.
               </h2>
             </div>
             <div class="item">
-              <img src="static/images/grid_output_labeled.png" alt="Keyframe sequences of six real-world surgical robot tasks including BiPegTransfer, GauzeRetrieve, NeedlePick, NeedleReach, PegTransfer, and NeedleRegrasp" loading="lazy">
+              <img src="static/images/grid_output_labeled.png" alt="Keyframe sequences of six real-world surgical robot tasks including BiPegTransfer, GauzeRetrieve, NeedlePick, NeedleReach, PegTransfer, and NeedleRegrasp" loading="lazy" style="max-width: 50%; margin: 0 auto; display: block;">
               <h2 class="subtitle has-text-centered">
-                Figure 5 from the paper. Keyframe sequences of task executions on the real robotic platform; each row shows one surgical task and each column represents a similar execution phase such as approach, grasp, transfer, or placement.
+              <b>Real-world task executions</b> Keyframe sequences of task executions on the real robotic platform; each row shows one surgical task and each column represents a similar execution phase such as approach, grasp, transfer, or placement.
               </h2>
             </div>
             <div class="item">
               <img src="static/images/main_result.png" alt="Tables comparing DSP with reinforcement learning, imitation learning, and demonstration-guided reinforcement learning baselines under different perturbation settings" loading="lazy">
               <h2 class="subtitle has-text-centered">
-                Tables I and II from the paper. The reported results compare DSP against multiple baselines across ECM, PSM, and Bi-PSM tasks, and evaluate performance under different action-level and trajectory-level perturbations.
+                <b>Quantitative main results</b> Tables I and II from the paper. The reported results compare DSP against multiple baselines across ECM, PSM, and Bi-PSM tasks, and evaluate performance under different action-level and trajectory-level perturbations.
               </h2>
             </div>
           </div>

@@ -112,6 +112,37 @@ body {
   font-family: 'Inter', sans-serif;
 }
 
+.publication-teaser {
+  margin: 2rem auto 0;
+  max-width: 100%;
+}
+
+.teaser-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.video-showcase {
+  background: var(--background-secondary);
+  border-top: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.intro-video-player {
+  display: block;
+  width: 100%;
+  border-radius: var(--border-radius-lg);
+  box-shadow: var(--shadow-xl);
+  background: #000;
+}
+
+.video-caption {
+  margin-top: 1.5rem;
+}
+
 
 /* Publication Content Styling */
 .publication-title {
